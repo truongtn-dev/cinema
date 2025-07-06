@@ -1,0 +1,144 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif; /* Sử dụng font Montserrat */
+}
+
+/* To ensure footer stays at the bottom and content doesn't overlap */
+.film {
+    background-color: #10141b;
+    min-height: calc(100vh - 70px); /* Adjust to make sure footer stays at the bottom */
+}
+
+/* The .list-film and .detail-film should be centered */
+.list-film {
+    display: flex;
+    justify-content: center; /* Center the content horizontally */
+    gap: 30px; /* Gap between the film list and extra info */
+    margin: 0; /* Remove any default margin */
+    flex-wrap: wrap; /* Allow items to wrap on small screens */
+}
+
+.detail-film {
+    width: 75%; /* Adjust to take 75% of the screen width */
+    margin-right: 20px;
+}
+
+.ex-info {
+    width: 20%; /* Side section takes 20% */
+}
+
+/* Ensure films are aligned properly in the table */
+.film-showing {
+    width: 100%;
+    border-collapse: separate;
+    margin-bottom: 30px; /* Add space between sections */
+}
+
+.film-showing td {
+    width: 200px;
+    padding: 15px;
+    background-color: #141313;
+    border: none;
+    text-align: center; /* Align content in the center */
+    transition: transform 0.3s ease; /* Transition for hover effect */
+}
+
+.film-showing td:hover {
+    transform: scale(1.05); /* Slightly zoom in on hover */
+}
+
+.img-wrapper {
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+}
+
+.film-showing img {
+    border-radius: 15px;
+    width: 100%;
+    height: 350px;
+    object-fit: cover; /* Ensures images scale correctly */
+    transition: transform 0.3s ease-in-out;
+}
+
+.img-wrapper:hover img {
+    transform: scale(0.95); /* Slightly zoom in on hover */
+}
+
+.film-showing .film-desc {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.film-showing p {
+    height: 25px;
+    color: #4b5669;
+}
+
+.film-showing .title-film {
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+}
+
+/* Highlighting the film sections */
+.phim-chieu {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.phim-chieu .dot {
+    width: 15px;
+    height: 15px;
+    background-color: red; /* Color for the dot */
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.phim-chieu h3 {
+    font-weight: bold; /* Bold */
+    font-size: 20px; /* Larger font size */
+    margin: 0; /* Remove default margin */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .detail-film {
+        width: 100%; /* Full width on smaller screens */
+        margin-right: 0; /* Remove right margin */
+    }
+
+    .ex-info {
+        display: none; /* Hide extra info on smaller screens */
+    }
+
+    .film-showing td {
+        width: 100%; /* Full width for each film item */
+        padding: 10px; /* Adjust padding */
+    }
+
+    .img-wrapper {
+        height: 200px; /* Reduce height for smaller screens */
+    }
+
+    .film-showing img {
+        height: 200px; /* Adjust image height */
+    }
+
+    .phim-chieu h3 {
+        font-size: 20px; /* Smaller font size */
+    }
+}
+
+@media (max-width: 480px) {
+    .phim-chieu h3 {
+        font-size: 18px; /* Even smaller font size */
+    }
+
+    .film-showing .title-film {
+        font-size: 18px; /* Adjust title font size */
+    }
+}
